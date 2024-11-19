@@ -13,10 +13,10 @@ class Settings(BaseSettings):
 
     @property
     def DATABASE_URL_BACKEND(self):
-        return f'postgresql+asyncpg://{self.backend_login}:{self.backend_password}@192.168.1.18:5432/postgres?async_fallback=True'
+        return f'postgresql+asyncpg://{self.backend_login}:{self.backend_password}@postgres:5432/postgres?async_fallback=True'
 
     @property
     def DATABASE_URL_POSTGRES(self):
-        return f'postgresql+asyncpg://{self.postgres_login}:{self.postgres_password}@192.168.1.18:5432/postgres?async_fallback=True'
+        return f'postgresql+asyncpg://{self.postgres_login}:{self.postgres_password}@postgres:5432/postgres?async_fallback=True'
 
 settings = Settings()
