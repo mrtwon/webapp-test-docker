@@ -32,13 +32,13 @@ async def route_add_todo(schema: CreateTodoSchema) -> TodoSchema:
 
 @app.get('/redis/test')
 async def route_test_redis() -> str:
-    r = redis.StrictRedis(host="192.168.1.18", port=6379, decode_responses=True)
+    r = redis.StrictRedis(host="redis", port=6379, decode_responses=True)
     result = r.get('test')
     return 'result = ' + str(result)
 
 
 @app.post('/redis/test')
 async def route_test_add_redis(text: str) -> str:
-    r = redis.StrictRedis(host="192.168.1.18", port=6379, decode_responses=True)
+    r = redis.StrictRedis(host="redis", port=6379, decode_responses=True)
     r.set('test', text)
     return 'new value ' + text
