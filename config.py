@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     backend_login: str = Field('backend', alias='backend_login')
     backend_password: str = Field('qwerty', alias='backend_password')
 
-    postgres_login: str = Field('postgres', alias='postgres_password')
+    postgres_login: str = Field('postgres', alias='postgres_login')
     postgres_password: str = Field('qwerty', alias='postgres_password')
 
     model_config = SettingsConfigDict(env_prefix='', env_file='.env')
