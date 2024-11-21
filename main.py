@@ -42,3 +42,7 @@ async def route_test_add_redis(text: str) -> str:
     r = redis.StrictRedis(host="redis", port=6379, decode_responses=True)
     r.set('test', text)
     return 'new value ' + text
+
+@app.get('/test_version')
+async def webapp_test_route():
+    return 'last version with user backend'
