@@ -13,7 +13,7 @@ class SqlAlchemyRepo:
 
     async def get_session(self) -> AsyncSession:
         async_engine = create_async_engine(
-            url=settings.DATABASE_URL_POSTGRES
+            url=settings.DATABASE_URL_BACKEND
         )
         session = async_sessionmaker(async_engine)
         return session(expire_on_commit=False)
